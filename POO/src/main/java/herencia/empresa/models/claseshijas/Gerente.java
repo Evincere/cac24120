@@ -1,9 +1,11 @@
 package herencia.empresa.models.claseshijas;
 
 import herencia.empresa.models.clasespadre.Empleado;
+import java.util.ArrayList;
 
 public class Gerente extends Empleado {
 
+    private ArrayList<Empleado> empleadosACargo = new ArrayList<Empleado>();
     private int nroEmpleados;
 
     public Gerente(String nombre, int edad, double salario, int nroEmpleados) {
@@ -11,13 +13,13 @@ public class Gerente extends Empleado {
         this.nroEmpleados = nroEmpleados;
     }
 
-    public void realizarEvaluaciones() {
+    private void realizarEvaluaciones() {
         System.out.println("El gerente esta realizando evaluaciones ...");
     }
 
     @Override
     public void trabajar() {
-        System.out.println("El gerente esta gestionando el equipo ...");
+        this.realizarEvaluaciones();
     }
 
     @Override
@@ -28,5 +30,20 @@ public class Gerente extends Empleado {
             ", edad=" + edad +
             ", salario=" + salario +
             '}';
+    }
+
+    public void addEmpleadoACargo(Empleado empleado) {
+        if(!(empleado instanceof Gerente)) {
+            this.empleadosACargo.add(empleado);
+        }else{
+            System.out.println("Ese empleado no puede estar a su cargo");
+        }
+    }
+
+    public int getNroEmpleados() {
+        return this.empleadosACargo.size();
+    }
+    public ArrayList<Empleado> getEmpleadosACargo() {
+        return this.empleadosACargo;
     }
 }
