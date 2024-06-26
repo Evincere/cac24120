@@ -1,12 +1,13 @@
 package herencia.empresa.models.clasespadre;
 
-public abstract class Empleado {
+public abstract class Empleado  {
 
     protected String nombre;
     protected int edad;
     protected double salario;
     private static int cantidadEmpleados = 0;
 
+    public Empleado() {}
     public Empleado(String nombre, int edad, double salario) {
         this.nombre = nombre;
         this.edad = edad;

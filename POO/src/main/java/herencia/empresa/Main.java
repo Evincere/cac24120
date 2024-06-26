@@ -1,48 +1,53 @@
 package herencia.empresa;
 
-import herencia.empresa.models.RecursosHumanos;
 import herencia.empresa.models.claseshijas.Desarrollador;
 import herencia.empresa.models.claseshijas.Disenador;
 import herencia.empresa.models.claseshijas.Gerente;
 import herencia.empresa.models.clasespadre.Empleado;
-import java.util.Arrays;
+import java.util.Random;
 
 public class Main {
 
     public static void main(String[] args) {
-        Gerente gerente = new Gerente("Semper", 45, 3000, 10);
-        Disenador disenador = new Disenador("PepitoDiseñador", 40, 1000, "Photoshop");
-        Desarrollador desarrollador = new Desarrollador("JacintoProgramador", 28, 2000, "Java");
-        Empleado gerenteSuplente = new Gerente("Camila", 28, 2000, 10 );
-        Empleado desarrolladorSinLenguaje = new Desarrollador("Paco", 20, 1000);
 
-        if(gerenteSuplente instanceof Gerente) {
-            ((Gerente) gerenteSuplente).trabajar();
+        Random random = new Random();
+        String[] nombres = {"Juan", "Ana", "Carlos", "Maria", "Pedro", "Laura", "Fernando", "Beatriz", "Jorge", "Carmen",
+          "Rafael", "Isabel", "Manuel", "María", "José", "Sofía", "Antonio", "Lucía", "Francisco", "Patricia"};
+
+        for (int i = 0; i < 20; i++) {
+            String tipoEmpleado = getRandomTipo(random);
+            String nombre = nombres[random.nextInt(nombres.length)];
+            int edad = random.nextInt(60) + 18; // Edades entre 18 y 78 años
+            double salario = random.nextDouble() * 5000 + 1000; // Salarios entre 1000 y 6000
+            if (tipoEmpleado.equals("Gerente")) {
+                int departamento = random.nextInt(20) + 1;
+                Empleado empleado = new Gerente(nombre, edad, salario, departamento);
+                System.out.println(empleado.toString());
+            } else if (tipoEmpleado.equals("Disenador")) {
+                String software = getSoftware(random);
+                Empleado empleado = new Disenador(nombre, edad, salario, software);
+                System.out.println(empleado.toString());
+            } else {
+                String lenguaje = getLenguaje(random);
+                Empleado empleado = new Desarrollador(nombre, edad, salario, lenguaje);
+                System.out.println(empleado.toString());
+            }
         }
-        gerente.trabajar();
-        disenador.trabajar();
-        desarrollador.trabajar();
 
-        System.out.println(desarrollador.getLenguajeActual());
-        System.out.println(((Desarrollador) desarrolladorSinLenguaje).getLenguajeActual());
-        ((Desarrollador) desarrolladorSinLenguaje).addLenguajesConocidos("Python");
-        System.out.println(
-            Arrays.toString(((Desarrollador) desarrolladorSinLenguaje).getLenguajesConocidos()));
+    }
 
-        disenador.addHerramientas("Figma");
-        System.out.println(disenador.getHerramientasDisponibles());
+    private static String getRandomTipo(Random random) {
+        String[] tipos = {"Gerente", "Disenador", "Desarrollador"};
+        return tipos[random.nextInt(tipos.length)];
+    }
 
-        gerente.addEmpleadoACargo(desarrollador);
-        gerente.addEmpleadoACargo(disenador);
-        gerente.addEmpleadoACargo(desarrolladorSinLenguaje);
-        gerente.addEmpleadoACargo(gerenteSuplente);
-        gerente.addEmpleadoACargo(gerente);
+    private static String getSoftware(Random random) {
+        String[] softwares = {"Photoshop", "Illustrator", "InDesign"};
+        return softwares[random.nextInt(softwares.length)];
+    }
 
-        System.out.println(gerente.getNroEmpleados());
-
-        Empleado.getCantidadEmpleados();
-
-        RecursosHumanos oficinaRRHH = new RecursosHumanos();
-        oficinaRRHH.guardarEmpleados(gerente.getEmpleadosACargo());
+    private static String getLenguaje(Random random) {
+        String[] lenguajes = {"Java", "Python", "JavaScript", "C#", "C++", "Ruby"};
+        return lenguajes[random.nextInt(lenguajes.length)];
     }
 }

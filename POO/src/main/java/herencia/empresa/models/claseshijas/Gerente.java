@@ -2,15 +2,18 @@ package herencia.empresa.models.claseshijas;
 
 import herencia.empresa.models.clasespadre.Empleado;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Gerente extends Empleado {
-
-    private ArrayList<Empleado> empleadosACargo = new ArrayList<Empleado>();
+    private List<Empleado> empleadosACargo = new ArrayList<>();
     private int nroEmpleados;
+
+    public Gerente() {};
 
     public Gerente(String nombre, int edad, double salario, int nroEmpleados) {
         super(nombre, edad, salario);
         this.nroEmpleados = nroEmpleados;
+
     }
 
     private void realizarEvaluaciones() {
@@ -43,7 +46,7 @@ public class Gerente extends Empleado {
     public int getNroEmpleados() {
         return this.empleadosACargo.size();
     }
-    public ArrayList<Empleado> getEmpleadosACargo() {
+    public List<Empleado> getEmpleadosACargo() {
         return this.empleadosACargo;
     }
 }

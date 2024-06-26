@@ -2,10 +2,11 @@ package herencia.empresa.models.claseshijas;
 
 import herencia.empresa.models.clasespadre.Empleado;
 
-public class Desarrollador extends Empleado {
+public class Desarrollador extends Empleado  {
+
     private String[] lenguajesConocidos = new String[0];
     private String lenguajeActual;
-
+    public Desarrollador() {}
 
     public Desarrollador(String nombre, int edad, double salario, String lenguajeProgramacion) {
         super(nombre, edad, salario);

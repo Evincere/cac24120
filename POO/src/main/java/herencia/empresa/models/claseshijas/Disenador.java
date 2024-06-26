@@ -3,9 +3,10 @@ package herencia.empresa.models.claseshijas;
 import herencia.empresa.models.clasespadre.Empleado;
 import java.util.ArrayList;
 
-public class Disenador extends Empleado {
-    private final String herramientaDisenio;
-    private ArrayList<String> herramientasDisponibles = new ArrayList<String>();
+public class Disenador extends Empleado  {
+
+    private String herramientaDisenio;
+    private ArrayList<String> herramientasDisponibles = new ArrayList<>();
 
     public Disenador(String nombre, int edad, double salario, String herramientaDisenio) {
         super(nombre, edad, salario);
