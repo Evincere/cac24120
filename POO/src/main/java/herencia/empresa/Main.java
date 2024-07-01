@@ -1,15 +1,17 @@
 package herencia.empresa;
 
+import herencia.empresa.models.RecursosHumanos;
 import herencia.empresa.models.claseshijas.Desarrollador;
 import herencia.empresa.models.claseshijas.Disenador;
 import herencia.empresa.models.claseshijas.Gerente;
 import herencia.empresa.models.clasespadre.Empleado;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Main {
 
     public static void main(String[] args) {
-
+        ArrayList<Empleado> empleados = new ArrayList<>();
         Random random = new Random();
         String[] nombres = {"Juan", "Ana", "Carlos", "Maria", "Pedro", "Laura", "Fernando", "Beatriz", "Jorge", "Carmen",
           "Rafael", "Isabel", "Manuel", "María", "José", "Sofía", "Antonio", "Lucía", "Francisco", "Patricia"};
@@ -22,18 +24,20 @@ public class Main {
             if (tipoEmpleado.equals("Gerente")) {
                 int departamento = random.nextInt(20) + 1;
                 Empleado empleado = new Gerente(nombre, edad, salario, departamento);
-                System.out.println(empleado.toString());
+                empleados.add(empleado);
             } else if (tipoEmpleado.equals("Disenador")) {
                 String software = getSoftware(random);
                 Empleado empleado = new Disenador(nombre, edad, salario, software);
-                System.out.println(empleado.toString());
+                empleados.add(empleado);
             } else {
                 String lenguaje = getLenguaje(random);
                 Empleado empleado = new Desarrollador(nombre, edad, salario, lenguaje);
-                System.out.println(empleado.toString());
+                empleados.add(empleado);
             }
         }
 
+        RecursosHumanos rrhh = new RecursosHumanos();
+        rrhh.guardarEmpleados(empleados);
     }
 
     private static String getRandomTipo(Random random) {
@@ -50,4 +54,6 @@ public class Main {
         String[] lenguajes = {"Java", "Python", "JavaScript", "C#", "C++", "Ruby"};
         return lenguajes[random.nextInt(lenguajes.length)];
     }
+
+
 }
