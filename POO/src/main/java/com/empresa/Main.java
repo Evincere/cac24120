@@ -1,10 +1,10 @@
-package herencia.empresa;
+package com.empresa;
 
-import herencia.empresa.models.RecursosHumanos;
-import herencia.empresa.models.claseshijas.Desarrollador;
-import herencia.empresa.models.claseshijas.Disenador;
-import herencia.empresa.models.claseshijas.Gerente;
-import herencia.empresa.models.clasespadre.Empleado;
+import com.empresa.models.claseshijas.Gerente;
+import com.empresa.models.RecursosHumanos;
+import com.empresa.models.claseshijas.Desarrollador;
+import com.empresa.models.claseshijas.Disenador;
+import com.empresa.models.clasespadre.Empleado;
 import java.util.ArrayList;
 import java.util.Random;
 

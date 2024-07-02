@@ -1,7 +1,7 @@
-package herencia.empresa.models;
+package com.empresa.models;
 
-import herencia.empresa.models.clasespadre.Empleado;
-import herencia.empresa.services.RecursosHumanosService;
+import com.empresa.services.RecursosHumanosService;
+import com.empresa.models.clasespadre.Empleado;
 import java.util.ArrayList;
 
 public class RecursosHumanos {

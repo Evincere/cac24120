@@ -1,6 +1,6 @@
-package herencia.empresa.infrastructure.persistencia;
+package com.empresa.infrastructure.persistencia;
 
-import herencia.empresa.models.clasespadre.Empleado;
+import com.empresa.models.clasespadre.Empleado;
 import java.util.ArrayList;
 
 public interface IPersistencia {

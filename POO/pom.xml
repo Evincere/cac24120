@@ -14,5 +14,22 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
+  <dependencies>
+<!--    dependencia de Jackson para la manipulacion de json en java-->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.17.1</version>
+    </dependency>
+<!--    dependencia del conector de mysql para java-->
+    <dependency>
+      <groupId>com.mysql</groupId>
+      <artifactId>mysql-connector-j</artifactId>
+      <version>8.2.0</version>
+    </dependency>
+
+
+  </dependencies>
+
 
 </project>

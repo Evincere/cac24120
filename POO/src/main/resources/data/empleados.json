@@ -1,0 +1,141 @@
+[ {
+  "nombre" : "Sofía",
+  "edad" : 32,
+  "salario" : 4687.6219483449895,
+  "empleadosACargo" : [ ],
+  "nroEmpleados" : 0,
+  "type" : "gerente"
+}, {
+  "nombre" : "Rafael",
+  "edad" : 59,
+  "salario" : 1592.6231275364846,
+  "herramientaDisenio" : "InDesign",
+  "herramientasDisponibles" : [ "InDesign" ],
+  "type" : "disenador"
+}, {
+  "nombre" : "Lucía",
+  "edad" : 41,
+  "salario" : 5775.777227661243,
+  "lenguajesConocidos" : [ ],
+  "lenguajeActual" : "C++",
+  "type" : "desarrollador"
+}, {
+  "nombre" : "Beatriz",
+  "edad" : 58,
+  "salario" : 2311.473559083147,
+  "herramientaDisenio" : "Photoshop",
+  "herramientasDisponibles" : [ "Photoshop" ],
+  "type" : "disenador"
+}, {
+  "nombre" : "Ana",
+  "edad" : 52,
+  "salario" : 2205.8768032574453,
+  "herramientaDisenio" : "InDesign",
+  "herramientasDisponibles" : [ "InDesign" ],
+  "type" : "disenador"
+}, {
+  "nombre" : "Antonio",
+  "edad" : 68,
+  "salario" : 2347.534595363417,
+  "lenguajesConocidos" : [ ],
+  "lenguajeActual" : "C++",
+  "type" : "desarrollador"
+}, {
+  "nombre" : "José",
+  "edad" : 26,
+  "salario" : 5573.156060900243,
+  "lenguajesConocidos" : [ ],
+  "lenguajeActual" : "C#",
+  "type" : "desarrollador"
+}, {
+  "nombre" : "Patricia",
+  "edad" : 34,
+  "salario" : 3155.0964400349244,
+  "lenguajesConocidos" : [ ],
+  "lenguajeActual" : "C#",
+  "type" : "desarrollador"
+}, {
+  "nombre" : "Jorge",
+  "edad" : 44,
+  "salario" : 3586.30167603468,
+  "lenguajesConocidos" : [ ],
+  "lenguajeActual" : "Python",
+  "type" : "desarrollador"
+}, {
+  "nombre" : "Patricia",
+  "edad" : 28,
+  "salario" : 3624.147716410667,
+  "lenguajesConocidos" : [ ],
+  "lenguajeActual" : "C++",
+  "type" : "desarrollador"
+}, {
+  "nombre" : "Fernando",
+  "edad" : 30,
+  "salario" : 5525.804480325971,
+  "herramientaDisenio" : "Illustrator",
+  "herramientasDisponibles" : [ "Illustrator" ],
+  "type" : "disenador"
+}, {
+  "nombre" : "Isabel",
+  "edad" : 30,
+  "salario" : 2175.207342364938,
+  "lenguajesConocidos" : [ ],
+  "lenguajeActual" : "C++",
+  "type" : "desarrollador"
+}, {
+  "nombre" : "Beatriz",
+  "edad" : 25,
+  "salario" : 1531.2762532763204,
+  "empleadosACargo" : [ ],
+  "nroEmpleados" : 0,
+  "type" : "gerente"
+}, {
+  "nombre" : "Isabel",
+  "edad" : 58,
+  "salario" : 1570.595066238122,
+  "lenguajesConocidos" : [ ],
+  "lenguajeActual" : "C#",
+  "type" : "desarrollador"
+}, {
+  "nombre" : "Rafael",
+  "edad" : 21,
+  "salario" : 2801.8246885183835,
+  "empleadosACargo" : [ ],
+  "nroEmpleados" : 0,
+  "type" : "gerente"
+}, {
+  "nombre" : "Ana",
+  "edad" : 35,
+  "salario" : 1899.8856106417634,
+  "empleadosACargo" : [ ],
+  "nroEmpleados" : 0,
+  "type" : "gerente"
+}, {
+  "nombre" : "Francisco",
+  "edad" : 41,
+  "salario" : 4180.573828691491,
+  "herramientaDisenio" : "Photoshop",
+  "herramientasDisponibles" : [ "Photoshop" ],
+  "type" : "disenador"
+}, {
+  "nombre" : "Pedro",
+  "edad" : 68,
+  "salario" : 3714.869147989698,
+  "empleadosACargo" : [ ],
+  "nroEmpleados" : 0,
+  "type" : "gerente"
+}, {
+  "nombre" : "Carlos",
+  "edad" : 60,
+  "salario" : 4385.409115172636,
+  "herramientaDisenio" : "Illustrator",
+  "herramientasDisponibles" : [ "Illustrator" ],
+  "type" : "disenador"
+}, {
+  "nombre" : "Beatriz",
+  "edad" : 63,
+  "salario" : 5853.986249384938,
+  "lenguajesConocidos" : [ ],
+  "lenguajeActual" : "Ruby",
+  "type" : "desarrollador"
+} ]

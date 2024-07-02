@@ -1,13 +1,16 @@
-package herencia.empresa.models.claseshijas;
+package com.empresa.models.claseshijas;
 
-import herencia.empresa.models.clasespadre.Empleado;
+import com.empresa.models.clasespadre.Empleado;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Desarrollador extends Empleado  {
 
+    @JsonProperty("type")
+    private String type = "desarrollador";
     private String[] lenguajesConocidos = new String[0];
     private String lenguajeActual;
-    public Desarrollador() {}
 
+    public Desarrollador() {}
     public Desarrollador(String nombre, int edad, double salario, String lenguajeProgramacion) {
         super(nombre, edad, salario);
         this.lenguajeActual = lenguajeProgramacion;
@@ -54,5 +57,9 @@ public class Desarrollador extends Empleado  {
     public String getLenguajeActual() {
         if(this.lenguajeActual.isBlank()) return "No hay un lenguaje actual";
         return lenguajeActual;
+    }
+
+    public void setLenguajeActual(String lenguajeActual) {
+        this.lenguajeActual = lenguajeActual;
     }
 }

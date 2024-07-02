@@ -1,13 +1,16 @@
-package herencia.empresa.models.claseshijas;
+package com.empresa.models.claseshijas;
 
-import herencia.empresa.models.clasespadre.Empleado;
+import com.empresa.models.clasespadre.Empleado;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 
-public class Disenador extends Empleado  {
-
+public class Disenador extends Empleado {
+    @JsonProperty("type")
+    private String type = "disenador";
     private String herramientaDisenio;
     private ArrayList<String> herramientasDisponibles = new ArrayList<>();
 
+    public Disenador() {}
     public Disenador(String nombre, int edad, double salario, String herramientaDisenio) {
         super(nombre, edad, salario);
         this.herramientaDisenio = herramientaDisenio;
@@ -41,5 +44,15 @@ public class Disenador extends Empleado  {
         this.herramientasDisponibles.add(nuevaHerramienta);
     }
 
+    public String getHerramientaDisenio() {
+        return herramientaDisenio;
+    }
 
+    public void setHerramientaDisenio(String herramientaDisenio) {
+        this.herramientaDisenio = herramientaDisenio;
+    }
+
+    public void setHerramientasDisponibles(ArrayList<String> herramientasDisponibles) {
+        this.herramientasDisponibles = herramientasDisponibles;
+    }
 }

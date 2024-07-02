@@ -1,19 +1,22 @@
-package herencia.empresa.models.claseshijas;
+package com.empresa.models.claseshijas;
 
-import herencia.empresa.models.clasespadre.Empleado;
+import com.empresa.models.clasespadre.Empleado;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Gerente extends Empleado {
+
+    @JsonProperty("type")
+    private String type = "gerente";
+
     private List<Empleado> empleadosACargo = new ArrayList<>();
     private int nroEmpleados;
 
     public Gerente() {};
-
     public Gerente(String nombre, int edad, double salario, int nroEmpleados) {
         super(nombre, edad, salario);
         this.nroEmpleados = nroEmpleados;
-
     }
 
     private void realizarEvaluaciones() {
@@ -48,5 +51,13 @@ public class Gerente extends Empleado {
     }
     public List<Empleado> getEmpleadosACargo() {
         return this.empleadosACargo;
+    }
+
+    public void setEmpleadosACargo(List<Empleado> empleadosACargo) {
+        this.empleadosACargo = empleadosACargo;
+    }
+
+    public void setNroEmpleados(int nroEmpleados) {
+        this.nroEmpleados = nroEmpleados;
     }
 }
