@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class MySQLPersistenciaImpl implements IPersistencia {
 
@@ -53,5 +54,44 @@ public class MySQLPersistenciaImpl implements IPersistencia {
         }
 
         return null;
+    }
+
+    @Override
+    public ArrayList<Usuario> getAllUsers() {
+        String sql = "SELECT * FROM users";
+        ArrayList<Usuario> usuarios = new ArrayList<>();
+
+        try {
+            PreparedStatement preparador = conexion.prepareStatement(sql);
+            ResultSet tablaResultado = preparador.executeQuery();
+
+            while (tablaResultado.next()) {
+                Usuario usuario = new Usuario();
+
+                usuario.setId(tablaResultado.getInt("id"));
+                usuario.setUsername(tablaResultado.getString("username"));
+                usuario.setEmail(tablaResultado.getString("email"));
+                usuario.setPassword(tablaResultado.getString("password"));
+
+                usuarios.add(usuario);
+            }
+            return usuarios;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void deleteUser(int id) {
+        String sql = "DELETE FROM users WHERE id = ?";
+
+        try {
+            PreparedStatement preparador = this.conexion.prepareStatement(sql);
+            preparador.setInt(1, id);
+
+            preparador.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
